@@ -10,9 +10,13 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet var pickerView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        _ = ScrollDatePicker(container_view: pickerView)
+        
     }
 
     override func didReceiveMemoryWarning() {
