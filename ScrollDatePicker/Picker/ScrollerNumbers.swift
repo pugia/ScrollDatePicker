@@ -14,20 +14,14 @@ class ScrollerNumbersCollectionView: UICollectionView, UICollectionViewDelegate,
     
     var cell_identifier = "Cell"
     
+    private var data:Array<String> = []
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        
-//        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-//        layout.scrollDirection = UICollectionViewScrollDirection.Vertical
-//        layout.itemSize = CGSize(width: frame.width, height: frame.height/3)
-//        layout.minimumInteritemSpacing = 0
-//        layout.minimumLineSpacing = 0
-//        self.collectionViewLayout = layout
         
         self.dataSource = self
         self.delegate = self
         self.registerClass(ScrollerNumbersCollectionViewCell.self, forCellWithReuseIdentifier: self.cell_identifier)
-        self.backgroundColor = UIColor.redColor()
         self.alwaysBounceVertical = false
         self.showsVerticalScrollIndicator = false
         self.canCancelContentTouches = true
@@ -35,13 +29,20 @@ class ScrollerNumbersCollectionView: UICollectionView, UICollectionViewDelegate,
         
     }
     
+    func initDataCell(data:Array<String>, identifier:String) {
+        self.cell_identifier = identifier
+        self.data = data
+        self.registerClass(ScrollerNumbersCollectionViewCell.self, forCellWithReuseIdentifier: self.cell_identifier)
+        self.reloadData()
+    }
+    
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 24
+        return data.count
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(cell_identifier, forIndexPath: indexPath) as! ScrollerNumbersCollectionViewCell
-        cell.label.text = "\(indexPath.row)"
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(self.cell_identifier, forIndexPath: indexPath) as! ScrollerNumbersCollectionViewCell
+        cell.label.text = data[indexPath.row]
         return cell
     }
     
