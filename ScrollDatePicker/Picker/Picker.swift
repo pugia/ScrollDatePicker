@@ -45,7 +45,6 @@ import UIKit
         view.frame = bounds
         view.autoresizingMask = [UIViewAutoresizing.FlexibleWidth, UIViewAutoresizing.FlexibleHeight]
         addSubview(view)
-        scrollerSetup()
         
         let components = calendar!.components([.Year, .Month, .Day, .Hour, .Minute], fromDate: date)
         day = components.day
@@ -53,6 +52,7 @@ import UIKit
         year = components.year
         hour = components.hour
         minute = components.minute
+        scrollerSetup()
         
     }
     
@@ -67,14 +67,20 @@ import UIKit
     
     func scrollerSetup() {
         
-        yearNumbers.initDataCell(popolateNumbers(1, to: 2050), identifier: "YearNumbersCell")
+        scrollerSetupNumbers()
+        
         yearNumbers.callback = callbackPicker
-        dayNumbers.initDataCell(popolateDays(self.year, m: self.month), identifier: "DayNumbersCell")
         dayNumbers.callback = callbackPicker
-        monthNumbers.initDataCell(popolateMonths(), identifier: "MonthNumbersCell")
         monthNumbers.callback = callbackPicker
-        hourNumbers.initDataCell(popolateNumbers(0, to: 23), identifier: "HourNumbersCell")
-        minuteNumbers.initDataCell(popolateNumbers(0, to: 59), identifier: "MinuteNumbersCell")
+    }
+    
+    func scrollerSetupNumbers() {
+        
+        yearNumbers.initDataCell(popolateNumbers(1, to: 2050))
+        dayNumbers.initDataCell(popolateDays(self.year, m: self.month))
+        monthNumbers.initDataCell(popolateMonths())
+        hourNumbers.initDataCell(popolateNumbers(0, to: 23))
+        minuteNumbers.initDataCell(popolateNumbers(0, to: 59))
 
         _ = Timeout(0.1) {
             self.scrollerInitValues()
@@ -100,8 +106,8 @@ import UIKit
         let maxDay = getMonthDays(year, m: month)
         if (day > maxDay) {
             day = maxDay;
+            scrollerSetupNumbers()
         }
-        scrollerSetup()
    
     }
     

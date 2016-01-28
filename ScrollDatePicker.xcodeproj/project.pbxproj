@@ -22,6 +22,7 @@
 		913B819C1C58D53600E9520F /* Picker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Picker.swift; path = Picker/Picker.swift; sourceTree = "<group>"; };
 		913B819F1C58D57200E9520F /* Picker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Picker.xib; path = Picker/Picker.xib; sourceTree = "<group>"; };
 		913B81A11C58D7C300E9520F /* ScrollerNumbers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScrollerNumbers.swift; path = Picker/ScrollerNumbers.swift; sourceTree = "<group>"; };
+		915861761C5AB0E700EF57D4 /* DINCondensedBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DINCondensedBold.ttf; sourceTree = "<group>"; };
 		91EB540C1C41D00B005861EB /* ScrollDatePicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrollDatePicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91EB540F1C41D00B005861EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		91EB54111C41D00B005861EB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -46,6 +47,7 @@
 		913B819E1C58D56000E9520F /* Picker */ = {
 			isa = PBXGroup;
 			children = (
+				915861761C5AB0E700EF57D4 /* DINCondensedBold.ttf */,
 				913B819C1C58D53600E9520F /* Picker.swift */,
 				913B819F1C58D57200E9520F /* Picker.xib */,
 				913B81A11C58D7C300E9520F /* ScrollerNumbers.swift */,

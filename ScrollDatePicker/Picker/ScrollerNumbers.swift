@@ -12,9 +12,10 @@ import UIKit
 
 class ScrollerNumbersCollectionView: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource, UIScrollViewDelegate, UICollectionViewDelegateFlowLayout {
     
-    var cell_identifier = "Cell"
     var callback: (Void -> Void)?
     var cellHeight:CGFloat = 0
+    
+    @IBInspectable var cell_identifier: String = "Cell"
     
     private var data:Array<String> = []
     private var ipsilon:CGFloat = 0
@@ -33,8 +34,7 @@ class ScrollerNumbersCollectionView: UICollectionView, UICollectionViewDelegate,
         
     }
     
-    func initDataCell(data:Array<String>, identifier:String) {
-        self.cell_identifier = identifier
+    func initDataCell(data:Array<String>) {
         self.data = data
         self.registerClass(ScrollerNumbersCollectionViewCell.self, forCellWithReuseIdentifier: self.cell_identifier)
         self.reloadData()
@@ -59,7 +59,6 @@ class ScrollerNumbersCollectionView: UICollectionView, UICollectionViewDelegate,
     }
     
     func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
-        print("scrollViewDidEndDecelerating")
         self.ipsilon = round(scrollView.contentOffset.y / self.cellHeight) * self.cellHeight
         _ = Timeout(0.2) {
             self.fixCellPosition(scrollView)
@@ -67,7 +66,6 @@ class ScrollerNumbersCollectionView: UICollectionView, UICollectionViewDelegate,
     }
     
     func scrollViewWillEndDragging(scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        print("scrollViewWillEndDragging")
         if(velocity.y == 0) {
             _ = Timeout(0.2) {
                 self.ipsilon = round(scrollView.contentOffset.y / self.cellHeight) * self.cellHeight
@@ -98,7 +96,6 @@ class ScrollerNumbersCollectionView: UICollectionView, UICollectionViewDelegate,
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         if (self.cellHeight == 0) {
             self.cellHeight = self.frame.height/3
-            print(self.cellHeight)
         }
         return CGSize(width: self.frame.width, height: self.frame.height/3)
     }
@@ -116,6 +113,7 @@ class ScrollerNumbersCollectionViewCell: UICollectionViewCell {
         label.frame =  CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height)
         label.textAlignment = .Center
         label.textColor = UIColor.blackColor()
+        label.font = UIFont(name: "DINCondensedBold.ttf", size: 20);
         
         self.addSubview(label)
         
