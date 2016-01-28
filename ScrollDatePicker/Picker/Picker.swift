@@ -20,6 +20,7 @@ import UIKit
     @IBOutlet weak var yearNumbers: ScrollerNumbersCollectionView!
     @IBOutlet weak var hourNumbers: ScrollerNumbersCollectionView!
     @IBOutlet weak var minuteNumbers: ScrollerNumbersCollectionView!
+    @IBOutlet weak var gradientTop: UIView!
 
     private var day:Int = 3
     private var month:Int = 1
@@ -68,10 +69,10 @@ import UIKit
     func scrollerSetup() {
         
         scrollerSetupNumbers()
-        
         yearNumbers.callback = callbackPicker
         dayNumbers.callback = callbackPicker
         monthNumbers.callback = callbackPicker
+        
     }
     
     func scrollerSetupNumbers() {
@@ -123,7 +124,7 @@ import UIKit
     
     func popolateMonths() -> Array<String> {
         
-        return ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""]
+        return ["", "JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC", ""]
         
     }
     
@@ -151,13 +152,5 @@ import UIKit
         return components2.day
         
     }
-    
-    /*
-    // Only override drawRect: if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
-    // Drawing code
-    }
-    */
-    
+        
 }

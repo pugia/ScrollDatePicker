@@ -10,12 +10,13 @@
 		913B819D1C58D53600E9520F /* Picker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913B819C1C58D53600E9520F /* Picker.swift */; };
 		913B81A01C58D57200E9520F /* Picker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 913B819F1C58D57200E9520F /* Picker.xib */; };
 		913B81A21C58D7C300E9520F /* ScrollerNumbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913B81A11C58D7C300E9520F /* ScrollerNumbers.swift */; };
+		91AC94101C5ACA1C0057D3EE /* gradientBottom.png in Resources */ = {isa = PBXBuildFile; fileRef = 91AC940E1C5ACA1C0057D3EE /* gradientBottom.png */; };
+		91AC94111C5ACA1C0057D3EE /* gradientTop.png in Resources */ = {isa = PBXBuildFile; fileRef = 91AC940F1C5ACA1C0057D3EE /* gradientTop.png */; };
 		91EB54101C41D00B005861EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EB540F1C41D00B005861EB /* AppDelegate.swift */; };
 		91EB54121C41D00B005861EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EB54111C41D00B005861EB /* ViewController.swift */; };
 		91EB54151C41D00B005861EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91EB54131C41D00B005861EB /* Main.storyboard */; };
 		91EB54171C41D00B005861EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91EB54161C41D00B005861EB /* Assets.xcassets */; };
 		91EB541A1C41D00B005861EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91EB54181C41D00B005861EB /* LaunchScreen.storyboard */; };
-		91EB54221C41D0C5005861EB /* ScrollDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EB54211C41D0C5005861EB /* ScrollDatePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,8 @@
 		913B819F1C58D57200E9520F /* Picker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Picker.xib; path = Picker/Picker.xib; sourceTree = "<group>"; };
 		913B81A11C58D7C300E9520F /* ScrollerNumbers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScrollerNumbers.swift; path = Picker/ScrollerNumbers.swift; sourceTree = "<group>"; };
 		915861761C5AB0E700EF57D4 /* DINCondensedBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DINCondensedBold.ttf; sourceTree = "<group>"; };
+		91AC940E1C5ACA1C0057D3EE /* gradientBottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gradientBottom.png; sourceTree = "<group>"; };
+		91AC940F1C5ACA1C0057D3EE /* gradientTop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gradientTop.png; sourceTree = "<group>"; };
 		91EB540C1C41D00B005861EB /* ScrollDatePicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrollDatePicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91EB540F1C41D00B005861EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		91EB54111C41D00B005861EB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -30,7 +33,6 @@
 		91EB54161C41D00B005861EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		91EB54191C41D00B005861EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		91EB541B1C41D00B005861EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		91EB54211C41D0C5005861EB /* ScrollDatePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollDatePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +53,8 @@
 				913B819C1C58D53600E9520F /* Picker.swift */,
 				913B819F1C58D57200E9520F /* Picker.xib */,
 				913B81A11C58D7C300E9520F /* ScrollerNumbers.swift */,
+				91AC940E1C5ACA1C0057D3EE /* gradientBottom.png */,
+				91AC940F1C5ACA1C0057D3EE /* gradientTop.png */,
 			);
 			name = Picker;
 			sourceTree = "<group>";
@@ -78,7 +82,6 @@
 				91EB54111C41D00B005861EB /* ViewController.swift */,
 				91EB54131C41D00B005861EB /* Main.storyboard */,
 				913B819E1C58D56000E9520F /* Picker */,
-				91EB54211C41D0C5005861EB /* ScrollDatePicker.swift */,
 				91EB54161C41D00B005861EB /* Assets.xcassets */,
 				91EB54181C41D00B005861EB /* LaunchScreen.storyboard */,
 				91EB541B1C41D00B005861EB /* Info.plist */,
@@ -145,8 +148,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				91EB541A1C41D00B005861EB /* LaunchScreen.storyboard in Resources */,
+				91AC94111C5ACA1C0057D3EE /* gradientTop.png in Resources */,
 				913B81A01C58D57200E9520F /* Picker.xib in Resources */,
 				91EB54171C41D00B005861EB /* Assets.xcassets in Resources */,
+				91AC94101C5ACA1C0057D3EE /* gradientBottom.png in Resources */,
 				91EB54151C41D00B005861EB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -161,7 +166,6 @@
 				91EB54121C41D00B005861EB /* ViewController.swift in Sources */,
 				913B81A21C58D7C300E9520F /* ScrollerNumbers.swift in Sources */,
 				913B819D1C58D53600E9520F /* Picker.swift in Sources */,
-				91EB54221C41D0C5005861EB /* ScrollDatePicker.swift in Sources */,
 				91EB54101C41D00B005861EB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
