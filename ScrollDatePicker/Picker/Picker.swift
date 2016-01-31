@@ -20,8 +20,13 @@ import UIKit
     @IBOutlet weak var yearNumbers: ScrollerNumbersCollectionView!
     @IBOutlet weak var hourNumbers: ScrollerNumbersCollectionView!
     @IBOutlet weak var minuteNumbers: ScrollerNumbersCollectionView!
-    @IBOutlet weak var gradientTop: UIView!
-
+    
+    @IBOutlet weak var dayHandler: ScrollerHandlerCollectionView!
+    @IBOutlet weak var monthHandler: ScrollerHandlerCollectionView!
+    @IBOutlet weak var yearHandler: ScrollerHandlerCollectionView!
+    @IBOutlet weak var hourHandler: ScrollerHandlerCollectionView!
+    @IBOutlet weak var minuteHandler: ScrollerHandlerCollectionView!
+    
     private var day:Int = 3
     private var month:Int = 1
     private var year:Int = 1986
@@ -67,21 +72,30 @@ import UIKit
     }
     
     func scrollerSetup() {
+
+        yearHandler.callback = callbackPicker
+        yearHandler.numbers = yearNumbers
         
+        monthHandler.callback = callbackPicker
+        monthHandler.numbers = monthNumbers
+        
+        dayHandler.callback = callbackPicker
+        dayHandler.numbers = dayNumbers
+
+        hourHandler.numbers = hourNumbers
+        minuteHandler.numbers = minuteNumbers
+
         scrollerSetupNumbers()
-        yearNumbers.callback = callbackPicker
-        dayNumbers.callback = callbackPicker
-        monthNumbers.callback = callbackPicker
         
     }
     
     func scrollerSetupNumbers() {
         
-        yearNumbers.initDataCell(popolateNumbers(1, to: 2050))
-        dayNumbers.initDataCell(popolateDays(self.year, m: self.month))
-        monthNumbers.initDataCell(popolateMonths())
-        hourNumbers.initDataCell(popolateNumbers(0, to: 23))
-        minuteNumbers.initDataCell(popolateNumbers(0, to: 59))
+        yearHandler.initDataCell(popolateNumbers(1, to: 2050))
+        dayHandler.initDataCell(popolateDays(self.year, m: self.month))
+        monthHandler.initDataCell(popolateMonths())
+        hourHandler.initDataCell(popolateNumbers(0, to: 23))
+        minuteHandler.initDataCell(popolateNumbers(0, to: 59))
 
         _ = Timeout(0.1) {
             self.scrollerInitValues()
@@ -90,25 +104,25 @@ import UIKit
     }
     
     func scrollerInitValues() {
-        self.dayNumbers.setCurrentElement(self.day)
-        self.monthNumbers.setCurrentElement(self.month)
-        self.yearNumbers.setCurrentElement(self.year)
-        self.hourNumbers.setCurrentElement(self.hour,offset: 1)
-        self.minuteNumbers.setCurrentElement(self.minute, offset: 1)
+        self.yearHandler.setCurrentElement(self.year)
+        self.monthHandler.setCurrentElement(self.month)
+        self.dayHandler.setCurrentElement(self.day)
+        self.hourHandler.setCurrentElement(self.hour,offset: 1)
+        self.minuteHandler.setCurrentElement(self.minute, offset: 1)
     }
     
     func callbackPicker() {
-        year = self.yearNumbers.getCurrentElement()
-        month = self.monthNumbers.getCurrentElement()
-        day = self.dayNumbers.getCurrentElement()
-        hour = self.hourNumbers.getCurrentElement()
-        minute = self.minuteNumbers.getCurrentElement()
+        year = self.yearHandler.getCurrentElement()
+        month = self.monthHandler.getCurrentElement()
+        day = self.dayHandler.getCurrentElement()
+        hour = self.hourHandler.getCurrentElement()
+        minute = self.minuteHandler.getCurrentElement()
         
         let maxDay = getMonthDays(year, m: month)
         if (day > maxDay) {
             day = maxDay;
-            scrollerSetupNumbers()
         }
+        scrollerSetupNumbers()
    
     }
     
