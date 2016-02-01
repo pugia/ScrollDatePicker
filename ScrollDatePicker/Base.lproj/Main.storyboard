@@ -22,13 +22,7 @@
                                 <rect key="frame" x="0.0" y="80" width="320" height="95"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aho-Po-E9Y">
-                                <rect key="frame" x="88" y="345" width="175" height="73"/>
-                                <fontDescription key="fontDescription" name="OriyaSangamMN" family="Oriya Sangam MN" pointSize="23"/>
-                                <state key="normal" title="Button"/>
-                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Nel-bc-syU" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="190:1136" id="0K2-sd-gIi"/>
                             <constraint firstItem="Nel-bc-syU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Uhs-SD-HZU"/>

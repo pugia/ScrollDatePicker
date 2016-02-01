@@ -12,8 +12,6 @@ import UIKit
 
 class ScrollerNumbersCollectionView: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource, UIScrollViewDelegate, UICollectionViewDelegateFlowLayout {
     
-    var callback: (Void -> Void)?
-    
     @IBInspectable var cell_identifier: String = "Cell"
     
     private var data:Array<String> = []
@@ -49,50 +47,6 @@ class ScrollerNumbersCollectionView: UICollectionView, UICollectionViewDelegate,
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(self.cell_identifier, forIndexPath: indexPath) as! ScrollerNumbersCollectionViewCell
         cell.label.text = data[indexPath.row]
         return cell
-    }
-    /*
-    override func touchesShouldCancelInContentView(view: UIView) -> Bool {
-        return true
-    }
-    
-    func scrollViewDidScroll(scrollView: UIScrollView) {
-        self.ipsilon = round(scrollView.contentOffset.y / self.cellHeight) * self.cellHeight
-    }
-    
-    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
-        self.ipsilon = round(scrollView.contentOffset.y / self.cellHeight) * self.cellHeight
-        _ = Timeout(0.2) {
-            self.fixCellPosition(scrollView)
-        }
-    }
-    
-    func scrollViewWillEndDragging(scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        if(velocity.y == 0) {
-            _ = Timeout(0.2) {
-                self.ipsilon = round(scrollView.contentOffset.y / self.cellHeight) * self.cellHeight
-                self.fixCellPosition(scrollView)
-            }
-        }
-    }
-
-    func fixCellPosition(scrollView: UIScrollView) {
-        UIView.animateWithDuration(0.1, animations: {
-            scrollView.contentOffset.y = self.ipsilon
-        })
-        self.selected = Int(self.ipsilon / self.cellHeight) + 1
-        _ = Timeout(0.1) {
-            self.callback?()
-        }
-    }
-    */
-
-    func setCurrentElement(i:Int, offset:Int=0) {
-        self.selected = i
-        self.contentOffset.y = self.cellHeight * CGFloat(i-1+offset)
-    }
-    
-    func getCurrentElement() -> Int {
-        return self.selected
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
@@ -151,7 +105,6 @@ class ScrollerHandlerCollectionView: UICollectionView, UICollectionViewDelegate,
         self.showsVerticalScrollIndicator = false
         self.canCancelContentTouches = true
         self.bounces = true
-        
         self.backgroundColor = UIColor.clearColor()
         
     }
