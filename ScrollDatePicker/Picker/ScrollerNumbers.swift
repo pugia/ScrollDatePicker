@@ -60,25 +60,73 @@ class ScrollerNumbersCollectionView: UICollectionView, UICollectionViewDelegate,
 
 class ScrollerNumbersCollectionViewCell: UICollectionViewCell {
     
-    let label = UILabel()
+    var label = myLabel()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         self.backgroundColor = UIColor.clearColor()
-        
-        label.frame =  CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height)
-        label.textAlignment = .Center
-        label.font = UIFont(name: "DIN Condensed", size: 40);
-        label.textColor = UIColor(red: 101/255, green: 101/255, blue: 101/255, alpha: 1)
-        label.numberOfLines = 1
-        
+        label.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height)
         self.addSubview(label)
         
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+    }
+    
+}
+
+class myLabel: UILabel {
+    
+    @IBInspectable var fontSize:CGFloat = 40 {
+        didSet {
+            self.font = UIFont(name: "DIN Condensed", size: fontSize);
+        }
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        graph()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        graph()
+    }
+    
+    func graph() {
+        self.textAlignment = .Center
+        self.font = UIFont(name: "DIN Condensed", size: fontSize);
+        self.textColor = UIColor(red: 101/255, green: 101/255, blue: 101/255, alpha: 1)
+//        self.setLineHeight(60)
+    }
+    
+    func animateToFont(font: UIFont, withDuration duration: NSTimeInterval) {
+        let oldFont = self.font
+        self.font = font
+        //let oldOrigin = frame.origin
+        let labelScale = oldFont.pointSize / font.pointSize
+        let oldTransform = transform
+        transform = CGAffineTransformScale(transform, labelScale, labelScale)
+        //frame.origin = oldOrigin
+        setNeedsUpdateConstraints()
+        UIView.animateWithDuration(duration) {
+            self.transform = oldTransform
+            self.layoutIfNeeded()
+        }
+    }
+    
+    func setLineHeight(lineHeight: CGFloat) {
+        let text = self.text
+        if let text = text {
+            let attributeString = NSMutableAttributedString(string: text)
+            let style = NSMutableParagraphStyle()
+            
+            style.lineSpacing = lineHeight
+            attributeString.addAttribute(NSParagraphStyleAttributeName, value: style, range: NSMakeRange(0, text.characters.count))
+            self.attributedText = attributeString
+        }
     }
     
 }

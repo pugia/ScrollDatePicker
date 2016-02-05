@@ -14,7 +14,7 @@ import UIKit
     var nibName:String = "Picker"
 
     var date = NSDate()
-
+    
     @IBOutlet weak var dayNumbers: ScrollerNumbersCollectionView!
     @IBOutlet weak var monthNumbers: ScrollerNumbersCollectionView!
     @IBOutlet weak var yearNumbers: ScrollerNumbersCollectionView!
@@ -26,6 +26,17 @@ import UIKit
     @IBOutlet weak var yearHandler: ScrollerHandlerCollectionView!
     @IBOutlet weak var hourHandler: ScrollerHandlerCollectionView!
     @IBOutlet weak var minuteHandler: ScrollerHandlerCollectionView!
+    
+    // labels
+    @IBOutlet weak var labelsGroup: UIView!
+    @IBOutlet weak var labelsWidthSmallConst: NSLayoutConstraint!
+    @IBOutlet weak var labelsWidthFullConst: NSLayoutConstraint!
+    @IBOutlet weak var dayLabel: myLabel!
+    @IBOutlet weak var monthLabel: myLabel!
+    @IBOutlet weak var yearLabel: myLabel!
+    @IBOutlet weak var minuteLabel: myLabel!
+    @IBOutlet weak var hourLabel: myLabel!
+    @IBOutlet weak var dotsLabel: myLabel!
     
     private var day:Int = 3
     private var month:Int = 1
@@ -68,6 +79,18 @@ import UIKit
         let nib = UINib(nibName: nibName, bundle: bundle)
         let view = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
         return view
+        
+    }
+    
+    func animateLabels() {
+        
+        UIView.animateWithDuration(10, animations: {
+            
+            self.labelsWidthSmallConst.priority = 250
+            self.labelsWidthFullConst.priority = 750
+            self.layoutIfNeeded()
+            
+        }, completion: nil)
         
     }
     
