@@ -11,9 +11,7 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var datePicker: Picker!
-    @IBAction func buttonClick(sender: AnyObject) {
-        datePicker.animateLabels()
-    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

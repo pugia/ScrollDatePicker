@@ -1,31 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Picker" customModule="ScrollDatePicker" customModuleProvider="target">
             <connections>
                 <outlet property="dayHandler" destination="hMx-9E-He5" id="6GF-Ad-A1k"/>
-                <outlet property="dayLabel" destination="1Nl-Jy-uMI" id="56f-B1-83o"/>
                 <outlet property="dayNumbers" destination="Xx1-1E-7kj" id="DCR-iQ-X0N"/>
-                <outlet property="dotsLabel" destination="URq-Mt-EaA" id="xiA-aw-1Qs"/>
                 <outlet property="hourHandler" destination="T3r-Cf-Gm3" id="APb-fx-6c2"/>
-                <outlet property="hourLabel" destination="iv2-bC-3zJ" id="lD1-dL-tQk"/>
                 <outlet property="hourNumbers" destination="z6g-g7-aRp" id="N4j-e8-3VT"/>
-                <outlet property="labelsGroup" destination="DfB-ST-P8J" id="hMr-E0-cWa"/>
-                <outlet property="labelsWidthFullConst" destination="API-QR-o6N" id="f04-mf-osb"/>
-                <outlet property="labelsWidthSmallConst" destination="ohM-c7-3NX" id="Hwa-bF-DdV"/>
                 <outlet property="minuteHandler" destination="6ss-uS-SJE" id="05E-4P-c7n"/>
-                <outlet property="minuteLabel" destination="eiB-mB-RzL" id="guj-aR-sZg"/>
                 <outlet property="minuteNumbers" destination="Who-ao-fCa" id="quE-GL-YdM"/>
                 <outlet property="monthHandler" destination="Lrv-Hp-oqp" id="VgE-ch-fwE"/>
-                <outlet property="monthLabel" destination="71m-Fm-yu5" id="nzl-a0-oKr"/>
                 <outlet property="monthNumbers" destination="JrA-7D-ppw" id="QM2-eG-LWX"/>
                 <outlet property="yearHandler" destination="Lpc-2h-PNg" id="bbS-rs-ewV"/>
-                <outlet property="yearLabel" destination="Lfz-lf-84B" id="ecF-g7-H8M"/>
                 <outlet property="yearNumbers" destination="WrF-KG-25I" id="DaA-i5-6TS"/>
             </connections>
         </placeholder>
@@ -34,7 +25,7 @@
             <rect key="frame" x="0.0" y="0.0" width="640" height="190"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ceG-Ub-Bas" userLabel="numbersContainer">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ceG-Ub-Bas" userLabel="numbersContainer">
                     <rect key="frame" x="0.0" y="0.0" width="640" height="190"/>
                     <subviews>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Xx1-1E-7kj" userLabel="DayNumbers" customClass="ScrollerNumbersCollectionView" customModule="ScrollDatePicker" customModuleProvider="target">
@@ -103,7 +94,7 @@
                             </userDefinedRuntimeAttributes>
                         </collectionView>
                     </subviews>
-                    <color key="backgroundColor" red="0.90588235289999997" green="0.90588235289999997" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="Who-ao-fCa" firstAttribute="height" secondItem="ceG-Ub-Bas" secondAttribute="height" multiplier="1.3" id="0Hy-3S-l1h"/>
                         <constraint firstItem="Who-ao-fCa" firstAttribute="centerY" secondItem="ceG-Ub-Bas" secondAttribute="centerY" id="174-E5-kSn"/>
@@ -127,7 +118,7 @@
                         <constraint firstItem="WrF-KG-25I" firstAttribute="width" secondItem="ceG-Ub-Bas" secondAttribute="width" multiplier="128:640" id="plC-Zx-IrS"/>
                     </constraints>
                 </view>
-                <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eyc-9P-YMM" userLabel="graphicContainer">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eyc-9P-YMM" userLabel="graphicContainer">
                     <rect key="frame" x="0.0" y="0.0" width="640" height="190"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vP7-yX-Vrz" userLabel="Line1">
@@ -169,7 +160,7 @@
                         <constraint firstItem="r54-Re-I90" firstAttribute="leading" secondItem="Eyc-9P-YMM" secondAttribute="leading" id="vNm-Ot-f9c"/>
                     </constraints>
                 </view>
-                <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ecl-gu-J30" userLabel="scrollHandlers">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ecl-gu-J30" userLabel="scrollHandlers">
                     <rect key="frame" x="0.0" y="0.0" width="640" height="190"/>
                     <subviews>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="hMx-9E-He5" userLabel="dayHandler" customClass="ScrollerHandlerCollectionView" customModule="ScrollDatePicker" customModuleProvider="target">
@@ -239,112 +230,6 @@
                         </collectionView>
                     </subviews>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DfB-ST-P8J" userLabel="labels">
-                    <rect key="frame" x="215" y="3" width="210" height="190"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="05" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Nl-Jy-uMI" userLabel="dayLabel" customClass="myLabel" customModule="ScrollDatePicker" customModuleProvider="target">
-                            <rect key="frame" x="21" y="-1" width="26" height="190.5"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                            <nil key="highlightedColor"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
-                                    <real key="value" value="16"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DEC" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="71m-Fm-yu5" userLabel="monthLabel" customClass="myLabel" customModule="ScrollDatePicker" customModuleProvider="target">
-                            <rect key="frame" x="48" y="84" width="39" height="20.5"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                            <nil key="highlightedColor"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
-                                    <real key="value" value="16"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lfz-lf-84B" userLabel="yearLabel" customClass="myLabel" customModule="ScrollDatePicker" customModuleProvider="target">
-                            <rect key="frame" x="88" y="84" width="42" height="20.5"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                            <nil key="highlightedColor"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
-                                    <real key="value" value="16"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                        </label>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3OJ-IE-4Ba" userLabel="timeGroup">
-                            <rect key="frame" x="137" y="0.0" width="53" height="190"/>
-                            <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="48" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eiB-mB-RzL" userLabel="minuteLabel" customClass="myLabel" customModule="ScrollDatePicker" customModuleProvider="target">
-                                    <rect key="frame" x="26" y="0.0" width="26.5" height="190"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <nil key="highlightedColor"/>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
-                                            <real key="value" value="16"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
-                                </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iv2-bC-3zJ" userLabel="hourLabel" customClass="myLabel" customModule="ScrollDatePicker" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="26.5" height="190"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <nil key="highlightedColor"/>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
-                                            <real key="value" value="16"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
-                                </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=":" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="URq-Mt-EaA" customClass="myLabel" customModule="ScrollDatePicker" customModuleProvider="target">
-                                    <rect key="frame" x="24" y="0.0" width="5" height="190"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <nil key="highlightedColor"/>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
-                                            <real key="value" value="16"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
-                                </label>
-                            </subviews>
-                            <constraints>
-                                <constraint firstItem="iv2-bC-3zJ" firstAttribute="centerY" secondItem="3OJ-IE-4Ba" secondAttribute="centerY" id="6pY-fy-5ym"/>
-                                <constraint firstAttribute="trailing" secondItem="eiB-mB-RzL" secondAttribute="trailing" id="86h-dJ-06h"/>
-                                <constraint firstItem="eiB-mB-RzL" firstAttribute="width" secondItem="3OJ-IE-4Ba" secondAttribute="width" multiplier="80:161" id="MfT-YE-rTp"/>
-                                <constraint firstItem="iv2-bC-3zJ" firstAttribute="height" secondItem="3OJ-IE-4Ba" secondAttribute="height" id="V4e-Si-BiC"/>
-                                <constraint firstItem="URq-Mt-EaA" firstAttribute="centerX" secondItem="3OJ-IE-4Ba" secondAttribute="centerX" id="ZJz-dj-y92"/>
-                                <constraint firstItem="URq-Mt-EaA" firstAttribute="centerY" secondItem="3OJ-IE-4Ba" secondAttribute="centerY" id="ZY8-UN-PZw"/>
-                                <constraint firstItem="iv2-bC-3zJ" firstAttribute="leading" secondItem="3OJ-IE-4Ba" secondAttribute="leading" id="bvZ-nJ-OrN"/>
-                                <constraint firstItem="iv2-bC-3zJ" firstAttribute="width" secondItem="3OJ-IE-4Ba" secondAttribute="width" multiplier="80:161" id="hh9-Bp-np5"/>
-                                <constraint firstItem="eiB-mB-RzL" firstAttribute="height" secondItem="3OJ-IE-4Ba" secondAttribute="height" id="mfT-V0-au8"/>
-                                <constraint firstItem="eiB-mB-RzL" firstAttribute="centerY" secondItem="3OJ-IE-4Ba" secondAttribute="centerY" id="sPP-Kf-lZX"/>
-                                <constraint firstItem="URq-Mt-EaA" firstAttribute="height" secondItem="3OJ-IE-4Ba" secondAttribute="height" id="unW-5b-2IX"/>
-                            </constraints>
-                        </view>
-                    </subviews>
-                    <color key="backgroundColor" red="1" green="0.99417355190000001" blue="0.071115769379999999" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstItem="Lfz-lf-84B" firstAttribute="leading" secondItem="71m-Fm-yu5" secondAttribute="trailing" constant="1" id="4AP-CL-38E"/>
-                        <constraint firstItem="Lfz-lf-84B" firstAttribute="width" secondItem="DfB-ST-P8J" secondAttribute="width" multiplier="128:640" id="5Z0-jb-BFu"/>
-                        <constraint firstItem="3OJ-IE-4Ba" firstAttribute="height" secondItem="DfB-ST-P8J" secondAttribute="height" id="5ra-mp-CSP"/>
-                        <constraint firstItem="71m-Fm-yu5" firstAttribute="centerY" secondItem="DfB-ST-P8J" secondAttribute="centerY" id="HNI-Jo-rFF"/>
-                        <constraint firstItem="3OJ-IE-4Ba" firstAttribute="centerY" secondItem="DfB-ST-P8J" secondAttribute="centerY" id="LMy-h7-tta"/>
-                        <constraint firstItem="71m-Fm-yu5" firstAttribute="width" secondItem="DfB-ST-P8J" secondAttribute="width" multiplier="120:640" id="Omv-ZT-sB9"/>
-                        <constraint firstItem="3OJ-IE-4Ba" firstAttribute="width" secondItem="DfB-ST-P8J" secondAttribute="width" multiplier="161:640" id="PiS-gV-RO7"/>
-                        <constraint firstItem="Lfz-lf-84B" firstAttribute="centerY" secondItem="DfB-ST-P8J" secondAttribute="centerY" id="PwR-vD-OJQ"/>
-                        <constraint firstItem="1Nl-Jy-uMI" firstAttribute="height" secondItem="DfB-ST-P8J" secondAttribute="height" id="UkE-JC-9bo"/>
-                        <constraint firstItem="3OJ-IE-4Ba" firstAttribute="leading" secondItem="DfB-ST-P8J" secondAttribute="trailing" multiplier="419:640" id="g9r-WE-RHJ"/>
-                        <constraint firstItem="1Nl-Jy-uMI" firstAttribute="centerY" secondItem="DfB-ST-P8J" secondAttribute="centerY" id="gVe-v5-WiJ"/>
-                        <constraint firstItem="1Nl-Jy-uMI" firstAttribute="width" secondItem="DfB-ST-P8J" secondAttribute="width" multiplier="80:640" id="hEu-R5-R5y"/>
-                        <constraint firstItem="1Nl-Jy-uMI" firstAttribute="leading" secondItem="DfB-ST-P8J" secondAttribute="trailing" multiplier="60:640" constant="1" id="jUF-6U-Kr8"/>
-                        <constraint firstItem="71m-Fm-yu5" firstAttribute="leading" secondItem="1Nl-Jy-uMI" secondAttribute="trailing" constant="1" id="tTu-yz-DfK"/>
-                    </constraints>
-                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
@@ -355,13 +240,9 @@
                 <constraint firstItem="hMx-9E-He5" firstAttribute="centerY" secondItem="Xx1-1E-7kj" secondAttribute="centerY" id="5fv-VB-ts8"/>
                 <constraint firstItem="hMx-9E-He5" firstAttribute="centerX" secondItem="Xx1-1E-7kj" secondAttribute="centerX" id="5y4-D3-XJi"/>
                 <constraint firstItem="rJX-8s-ZEu" firstAttribute="centerY" secondItem="JrA-7D-ppw" secondAttribute="centerY" id="6is-4l-xeq"/>
-                <constraint firstItem="DfB-ST-P8J" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="3" id="9oX-Zx-GDw"/>
-                <constraint firstItem="DfB-ST-P8J" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" priority="250" id="API-QR-o6N"/>
                 <constraint firstItem="Lpc-2h-PNg" firstAttribute="centerX" secondItem="WrF-KG-25I" secondAttribute="centerX" id="BRD-L6-2I0"/>
                 <constraint firstItem="Lpc-2h-PNg" firstAttribute="centerY" secondItem="WrF-KG-25I" secondAttribute="centerY" id="CMM-G3-RG4"/>
-                <constraint firstItem="DfB-ST-P8J" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="DTm-ga-yS3"/>
                 <constraint firstItem="Lrv-Hp-oqp" firstAttribute="width" secondItem="JrA-7D-ppw" secondAttribute="width" id="De7-jP-tGI"/>
-                <constraint firstItem="DfB-ST-P8J" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" priority="750" id="Dx0-Ax-8b1"/>
                 <constraint firstItem="T3r-Cf-Gm3" firstAttribute="centerY" secondItem="z6g-g7-aRp" secondAttribute="centerY" id="GCs-SM-mR7"/>
                 <constraint firstItem="vP7-yX-Vrz" firstAttribute="leading" secondItem="Xx1-1E-7kj" secondAttribute="trailing" id="IIt-8P-ndm"/>
                 <constraint firstItem="rJX-8s-ZEu" firstAttribute="height" secondItem="JrA-7D-ppw" secondAttribute="height" id="KJc-8s-DrG"/>
@@ -381,11 +262,9 @@
                 <constraint firstItem="6ss-uS-SJE" firstAttribute="centerY" secondItem="Who-ao-fCa" secondAttribute="centerY" id="bk1-HY-WEC"/>
                 <constraint firstItem="ecl-gu-J30" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="eEx-8g-Ah6"/>
                 <constraint firstItem="4Ni-w8-O9b" firstAttribute="centerY" secondItem="z6g-g7-aRp" secondAttribute="centerY" id="hJK-5N-7fE"/>
-                <constraint firstItem="DfB-ST-P8J" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="jE8-dj-sY4"/>
                 <constraint firstItem="vP7-yX-Vrz" firstAttribute="centerY" secondItem="Xx1-1E-7kj" secondAttribute="centerY" id="jG9-YH-Yd6"/>
                 <constraint firstItem="Eyc-9P-YMM" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="lFU-KO-D8Q"/>
                 <constraint firstItem="ceG-Ub-Bas" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="lrs-nA-E4L"/>
-                <constraint firstItem="DfB-ST-P8J" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="210:640" priority="750" id="ohM-c7-3NX"/>
                 <constraint firstItem="Lrv-Hp-oqp" firstAttribute="centerY" secondItem="JrA-7D-ppw" secondAttribute="centerY" id="p5H-DY-Zhx"/>
                 <constraint firstItem="rJX-8s-ZEu" firstAttribute="trailing" secondItem="JrA-7D-ppw" secondAttribute="trailing" id="rrM-dj-zIp"/>
                 <constraint firstItem="hMx-9E-He5" firstAttribute="width" secondItem="Xx1-1E-7kj" secondAttribute="width" id="s8j-cb-D6T"/>

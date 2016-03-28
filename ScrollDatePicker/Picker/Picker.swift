@@ -26,17 +26,12 @@ import UIKit
     @IBOutlet weak var yearHandler: ScrollerHandlerCollectionView!
     @IBOutlet weak var hourHandler: ScrollerHandlerCollectionView!
     @IBOutlet weak var minuteHandler: ScrollerHandlerCollectionView!
-    
+
     // labels
-    @IBOutlet weak var labelsGroup: UIView!
-    @IBOutlet weak var labelsWidthSmallConst: NSLayoutConstraint!
-    @IBOutlet weak var labelsWidthFullConst: NSLayoutConstraint!
+    // dayLabel
     @IBOutlet weak var dayLabel: myLabel!
-    @IBOutlet weak var monthLabel: myLabel!
-    @IBOutlet weak var yearLabel: myLabel!
-    @IBOutlet weak var minuteLabel: myLabel!
-    @IBOutlet weak var hourLabel: myLabel!
-    @IBOutlet weak var dotsLabel: myLabel!
+    @IBOutlet weak var dayLabelLeadingC: NSLayoutConstraint!
+    
     
     private var day:Int = 3
     private var month:Int = 1
@@ -83,14 +78,28 @@ import UIKit
     }
     
     func animateLabels() {
+        // dayLabel
+//        dayLabel.animateToFontSize(40, withDuration: 1)
+        UIView.animateWithDuration(1, animations: {
+            let f = self.dayNumbers.frame
+            let h = f.height/3
+            let fr = CGRect(x: f.origin.x, y: f.origin.y + h, width: f.width, height: h)
+            self.dayLabel.frame = fr
+        })
+//        UIView.animateWithDuration(0.5, animations: {
+//            self.dayLabelHeightC.priority = 250
+//            self.dayLabelLeadingC.priority = 250
+//            self.dayLabelWidthC.priority = 250
+//            self.layoutIfNeeded()
+//        })
+//        UIView.animateWithDuration(0.5, animations: {
+//            let pippo = self.view.frame.width / 3.5
+//            self.dayLabel.frame.origin.x += pippo
+//        })
         
-        UIView.animateWithDuration(10, animations: {
-            
-            self.labelsWidthSmallConst.priority = 250
-            self.labelsWidthFullConst.priority = 750
-            self.layoutIfNeeded()
-            
-        }, completion: nil)
+        _ = Timeout(1) {
+            print(self.dayLabel.frame)
+        }
         
     }
     

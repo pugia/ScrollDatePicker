@@ -102,9 +102,9 @@ class myLabel: UILabel {
 //        self.setLineHeight(60)
     }
     
-    func animateToFont(font: UIFont, withDuration duration: NSTimeInterval) {
+    func animateToFontSize(fontSize: CGFloat, withDuration duration: NSTimeInterval) {
         let oldFont = self.font
-        self.font = font
+        self.font = UIFont(name: "DIN Condensed", size: fontSize);
         //let oldOrigin = frame.origin
         let labelScale = oldFont.pointSize / font.pointSize
         let oldTransform = transform
@@ -242,7 +242,7 @@ class Timeout: NSObject
         super.init()
         self.callback = callback
         self.timer = NSTimer.scheduledTimerWithTimeInterval(NSTimeInterval(delaySeconds),
-            target: self, selector: "invoke", userInfo: nil, repeats: false)
+            target: self, selector: #selector(Timeout.invoke), userInfo: nil, repeats: false)
     }
     
     func invoke()
